@@ -1,0 +1,153 @@
+/* --- Executive Minimalist Styles --- */
+:root {
+    --bg-main: #0f172a;        /* Deep Slate Blue */
+    --bg-card: #1e293b;        /* Lighter Slate for sections */
+    --text-primary: #f1f5f9;   /* Off-White */
+    --text-secondary: #94a3b8; /* Muted Grey-Blue */
+    --accent: #6366f1;         /* Indigo Blue */
+    --accent-glow: rgba(99, 102, 241, 0.2);
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    padding: 40px 20px;
+}
+
+.portfolio-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Header --- */
+header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+header p {
+    font-family: 'Courier New', monospace; /* Keeping the CSE vibe subtle */
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* --- Typography & Section Headers --- */
+h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    margin-left: 20px;
+    opacity: 0.3;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+/* --- Skills Module --- */
+.skill-item {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.portfolio-wrapper > div[style*="flex"] > div {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 5px;
+    flex: 1 1 200px;
+}
+
+/* --- Projects --- */
+.project-box {
+    background: var(--bg-main);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--accent);
+    margin-top: 15px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.project-box:hover {
+    transform: translateY(-3px);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+/* --- Contact & Footer --- */
+.contact-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+    border-bottom: 2px solid var(--accent);
+}
+
+.contact-link:hover {
+    color: var(--accent);
+}
+
+footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+
+/* --- Cursor Animation --- */
+.cursor {
+    border-right: 3px solid var(--accent);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: var(--accent); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .portfolio-wrapper {
+        padding: 30px 20px;
+    }
+    h1 { font-size: 1.8rem; }
+}
